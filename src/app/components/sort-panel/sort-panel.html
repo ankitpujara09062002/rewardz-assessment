@@ -1,0 +1,27 @@
+<div class="sort-overlay" *ngIf="isOpen" (click)="close()"></div>
+<div class="sort-panel" [class.sort-panel--open]="isOpen">
+  <div class="sort-panel__header">
+    <span class="sort-panel__title">Filter By</span>
+    <button class="sort-panel__reset" (click)="resetAll()">Reset All</button>
+  </div>
+  <div class="sort-panel__body">
+    <p class="sort-panel__label">Sort</p>
+    <div class="sort-panel__options">
+      <button
+        class="sort-panel__btn"
+        [class.sort-panel__btn--active]="selectedSort === 'asc'"
+        (click)="selectedSort = 'asc'">
+        A to Z
+      </button>
+      <button
+        class="sort-panel__btn"
+        [class.sort-panel__btn--active]="selectedSort === 'desc'"
+        (click)="selectedSort = 'desc'">
+        Z to A
+      </button>
+    </div>
+  </div>
+  <div class="sort-panel__footer">
+    <button class="sort-panel__apply" (click)="apply()">Apply</button>
+  </div>
+</div>

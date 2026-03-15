@@ -1,0 +1,16 @@
+<div class="reward-card" [class.reward-card--out-of-stock]="isOutOfStock">
+  <div class="reward-card__image-wrap">
+    <img class="reward-card__image" [src]="imageUrl" [alt]="reward.name" />
+    <span *ngIf="isOutOfStock" class="reward-card__badge reward-card__badge--out">
+      Out of stock
+    </span>
+    <span *ngIf="isHighDemand" class="reward-card__badge reward-card__badge--demand">
+      ON High Demand - Only {{ reward.quantity }} rewards left
+    </span>
+  </div>
+  <div class="reward-card__body">
+    <p class="reward-card__name">{{ reward.name }}</p>
+    <p class="reward-card__points">{{ reward.points }} Points</p>
+    <p *ngIf="formattedDate" class="reward-card__date">Valid Until {{ formattedDate }}</p>
+  </div>
+</div>
